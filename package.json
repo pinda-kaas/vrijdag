@@ -1,0 +1,10 @@
+{
+  "name": "WIP",
+  "version": "1.0.0",
+  "devDependencies": {
+    "angular-ui-router": "^0.2.15"
+  },
+  "dependencies": {
+    "ng-table": "^0.5.4"
+  }
+}
