@@ -1,0 +1,27 @@
+<div>
+    {{accounts.length}} results match your search selection.
+    <div>
+
+        <table ng-table="tableParams" template-pagination="custom/pager" class="table">
+            <tr ng-repeat="account in $data | filter:accountName | filter:key">
+                <td data-title="'Account'" sortable="'key'">
+                    {{account.account.accountId.key}}
+                </td>
+                <td>
+                    {{account.account.accountName}}
+                </td>
+                <td data-title="'Adviser'">
+                    {{account.account.adviser.key}}
+                </td>
+                <td data-title="'Product'">
+                    {{account.account.productName}}
+                </td>
+                <td data-title="'Status'">
+                    {{account.minOpenOrderState}}
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+</div>

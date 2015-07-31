@@ -21,58 +21,39 @@
         </div>
 
         <div>
-            <div ng-controller="TabCtrl">
+            <div>
                 <tabset>
-                    <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active"
-                         select="onTabSelected(tab.slug)">
-                        {{ tab.content }}
+                    <tab heading="Orders" active="tab.active">
+                        <div>
+
+                            {{data.length}} results match your search selection.
+                            <div>
+                                <table ng-table="tableParams" template-pagination="custom/pager" class="table">
+                                    <tr ng-repeat="account in $data | filter:accountName | filter:key">
+                                        <td data-title="'Account'" sortable="'account.accountName'">
+                                            {{account.account.accountId.key}}
+                                        </td>
+                                        <td>
+                                            {{account.account.accountName}}
+                                        </td>
+                                        <td data-title="'Adviser'" sortable="'account.adviser.key'">
+                                            {{account.account.adviser.key}}
+                                        </td>
+                                        <td data-title="'Product'" sortable="'account.productName'">
+                                            {{account.account.productName}}
+                                        </td>
+                                        <td data-title="'Status'" sortable="'minOpenOrderState'">
+                                            {{account.minOpenOrderState}}
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+                        </div>
                     </tab>
                 </tabset>
             </div>
-
-            <!--<script type="text/ng-template" id="one.tpl.html">-->
-                <!--<div id="viewOne">-->
-                    <!--{{accounts.length}} results match your search selection.-->
-                    <!--<div>-->
-
-                        <!--<table ng-table="tableParams" template-pagination="custom/pager" class="table">-->
-                            <!--<tr ng-repeat="account in $data | filter:accountName | filter:key">-->
-                                <!--<td data-title="'Account'" sortable="'key'">-->
-                                    <!--{{account.account.accountId.key}}-->
-                                <!--</td>-->
-                                <!--<td>-->
-                                    <!--{{account.account.accountName}}-->
-                                <!--</td>-->
-                                <!--<td data-title="'Adviser'">-->
-                                    <!--{{account.account.adviser.key}}-->
-                                <!--</td>-->
-                                <!--<td data-title="'Product'">-->
-                                    <!--{{account.account.productName}}-->
-                                <!--</td>-->
-                                <!--<td data-title="'Status'">-->
-                                    <!--{{account.minOpenOrderState}}-->
-                                <!--</td>-->
-                            <!--</tr>-->
-                        <!--</table>-->
-
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</script>-->
-
-            <!--<script type="text/ng-template" id="two.tpl.html">-->
-                <!--<div id="viewTwo">-->
-
-                    <!--awaiting settlement-->
-                <!--</div>-->
-            <!--</script>-->
-
-            <!--<script type="text/ng-template" id="three.tpl.html">-->
-                <!--<div id="viewThree">-->
-                    <!--complete orders-->
-                <!--</div>-->
-            <!--</script>-->
-
 
             <script type="text/ng-template" id="custom/pager">
 

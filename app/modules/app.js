@@ -1,11 +1,11 @@
-var app =angular.module('WIP', ['ui.router','ngTable']);
+var app =angular.module('WIP', ['ui.router','ngTable','ui.bootstrap']);
 
 
 app.config(function($stateProvider) {
     // Now set up the states
     $stateProvider
         .state('orders', {
-            templateUrl: './modules/common/partials/ordersNew.html',
+            templateUrl: '../modules/common/orders/partials/ordersNew.html',
             controller: 'OrdersCtrl'
         });
 
