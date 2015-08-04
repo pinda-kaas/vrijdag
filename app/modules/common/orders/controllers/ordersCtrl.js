@@ -2,6 +2,8 @@ app.controller('OrdersCtrl', function ($scope, ngTableParams, $filter,$location)
 
     console.log('ordersctrl time');
 
+    $scope.filtered={};
+
     $scope.noOrders =true;
 
     $scope.tabs = [{
@@ -426,10 +428,10 @@ app.controller('OrdersCtrl', function ($scope, ngTableParams, $filter,$location)
         total: $scope.data.length, // length of data
 
         getData: function ($defer, params) {
-            var orderedData = params.sorting() ?
+            $scope.orderedData = params.sorting() ?
                 $filter('orderBy')($scope.data, params.orderBy()) :
                 $scope.data;
-            $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+            $defer.resolve($scope.orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
         }
             //$scope.accounts = data;
             ////$defer.resolve($scope.accounts);

@@ -38,8 +38,15 @@ body {
 {
     margin:auto;
     font-size:12px;
-
 }
+
+.orders .mainTable
+{
+    margin-right:10px;
+    margin-left:10px;
+    margin-bottom: 10px;
+}
+
 
 .orders .table th{
     background-color: #adadad;
@@ -55,10 +62,30 @@ body {
 /*}*/
 
 .orders .table td {
+    width:10%;
+    /*float:left;*/
+    word-wrap:break-word;
+}
+
+.orders .table .accountName {
+    width:30%;
+    /*float:left;*/
+    word-wrap:break-word;
+}
+
+.orders .table .productName {
+    width:30%;
+    /*float:left;*/
+    word-wrap:break-word;
+}
+
+.orders .table .status {
     width:20%;
     /*float:left;*/
-    /*word-wrap:break-word;*/
+    word-wrap:break-word;
 }
+
+
 
 .orders .tablerow{
     background-color: #adadad;
@@ -81,13 +108,8 @@ body {
     /*padding:10px;*/
 }
 
-.pager
+.tab-content
 {
     margin-bottom: 10px;
 }
 
-
-
-/*.row{*/
-    /*margin-top: 10px;*/
-/*}*/

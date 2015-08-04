@@ -28,29 +28,38 @@
         <div>
             <div>
                 <div>
+                    <span id="noOrders" ng-hide="noOrders">There are no orders which match your criteria. Please try again.</span>
+                    <span id="nrResults">{{filtered.length}} results match your search selection.</span>
+                    
                     <tabset>
                         <tab heading="Orders" active="tab.active">
                             <div>
-                                <span id="noOrders" ng-hide="noOrders">There are no orders which match your criteria. Please try again.</span>
-                                <span id="nrResults">{{data.length}} results match your search selection.</span>
 
-                                <div>
+
+                                <div class="mainTable">
                                     <table ng-table="tableParams" template-pagination="custom/pager" class="table">
-                                        <tr ng-repeat="account in $data | filter:accountName | filter:key"
+                                        <!--ng-repeat="account in $data | filter:accountName | filter:key"-->
+                                        <tr
+                                                ng-repeat="account in $filtered =($data | filter:accountName)"
+
                                             class="orders tablerow">
+
+                                            <td>{{filtered.length}}</td>
+
+
                                             <td data-title="'ID'" sortable="'account.accountId.key'">
                                                 {{account.account.accountId.key}}
                                             </td>
-                                            <td data-title="'Account'" sortable="'account.accountName'">
+                                            <td class="accountName" data-title="'Account'" sortable="'account.accountName'">
                                                 {{account.account.accountName}}
                                             </td>
                                             <td data-title="'Adviser'" sortable="'account.adviser.key'">
                                                 {{account.account.adviser.key}}
                                             </td>
-                                            <td data-title="'Product'" sortable="'account.productName'">
+                                            <td class="productName" data-title="'Product'" sortable="'account.productName'">
                                                 {{account.account.productName}}
                                             </td>
-                                            <td data-title="'Status'" sortable="'minOpenOrderState'">
+                                            <td class="status" data-title="'Status'" sortable="'minOpenOrderState'">
                                                 {{account.minOpenOrderState}}
                                             </td>
                                         </tr>
