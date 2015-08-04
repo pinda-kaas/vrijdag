@@ -11,7 +11,7 @@ body {
 
 .search
 {
-    background-color: #f6f6f6;
+    /*background-color: #f6f6f6;*/
     margin:20px 20px;
     padding:20px;
 }
@@ -22,9 +22,9 @@ body {
     width:70%;
 }
 
-.search .icon {
-    background:url(images/magnify.gif) no-repeat;
-}
+/*.search .icon {*/
+    /*background:url(images/magnify.gif) no-repeat;*/
+/*}*/
 
 .search input::-webkit-input-placeholder { font-style:italic; }
 
@@ -36,15 +36,16 @@ body {
 /*Orders style*/
 .orders table
 {
-    margin:5px 0 0 0;
+    margin:auto;
     font-size:12px;
+
 }
 
 .orders .table th{
     background-color: #adadad;
 }
 
-/*.orders .table td th {*/
+/**!/*/
     /*vertical-align:top;*/
     /*padding:2px 3px 0 3px;*/
     /*line-height:normal;*/
@@ -52,6 +53,12 @@ body {
     /*min-height:30px;*/
     /*height:30px;*/
 /*}*/
+
+.orders .table td {
+    width:20%;
+    /*float:left;*/
+    /*word-wrap:break-word;*/
+}
 
 .orders .tablerow{
     background-color: #adadad;
@@ -68,9 +75,18 @@ body {
 .resetFilter
 {
     float:right;
-    margin:10px;
-    padding:10px;
+    margin-top:13px;
+    margin-right:20px;
+    font-size:10px;
+    /*padding:10px;*/
 }
+
+.pager
+{
+    margin-bottom: 10px;
+}
+
+
 
 /*.row{*/
     /*margin-top: 10px;*/
