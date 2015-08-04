@@ -1,90 +1,91 @@
-<div ng-controller="OrdersCtrl">
-    Account search testing
+<div class="main">
 
-    <input type="text" ng-model="accountName" placeholder="Search by account name or number"/>
-
-    Adviser
-    <select ng-model="key" id="">
-        <option value=''>All</option>
-        <option value='AAA'>AAA</option>
-        <option value='BBB'>BBB</option>
-    </select>
-
-    <br/>
-    <br/>
-
-    <div>
-
-        <div style="float:right">
-            <a href="#" ng-click="key='';accountName='' ">Reset Filter</a>
-            &nbsp<a href="#">Refresh</a>&nbsp<a href="#">Export</a>&nbsp<a href="#">Print</a>
+    <div class="row search">
+        <div class="col-lg-9">
+            Account Search:
+            <input type="text" ng-model="accountName" id="field4" placeholder="Search by account name or number"/>
+            <i class="fa fa-search"></i>
         </div>
 
-        <div>
-            <div>
-                <tabset>
-                    <tab heading="Orders" active="tab.active">
-                        <div>
-
-                            {{data.length}} results match your search selection.
-                            <div>
-                                <table ng-table="tableParams" template-pagination="custom/pager" class="table">
-                                    <tr ng-repeat="account in $data | filter:accountName | filter:key">
-                                        <td data-title="'Account'" sortable="'account.accountName'">
-                                            {{account.account.accountId.key}}
-                                        </td>
-                                        <td>
-                                            {{account.account.accountName}}
-                                        </td>
-                                        <td data-title="'Adviser'" sortable="'account.adviser.key'">
-                                            {{account.account.adviser.key}}
-                                        </td>
-                                        <td data-title="'Product'" sortable="'account.productName'">
-                                            {{account.account.productName}}
-                                        </td>
-                                        <td data-title="'Status'" sortable="'minOpenOrderState'">
-                                            {{account.minOpenOrderState}}
-                                        </td>
-                                    </tr>
-                                </table>
-
-
-                            </div>
-                        </div>
-                    </tab>
-                </tabset>
-            </div>
-
-            <script type="text/ng-template" id="custom/pager">
-
-                <ul class="pager ng-cloak">
-                    <li ng-repeat="page in pages"
-                        ng-class="{'disabled': !page.active, 'previous': page.type == 'prev', 'next': page.type == 'next'}"
-                        ng-show="page.type == 'prev' || page.type == 'next'" ng-switch="page.type">
-                        <a ng-switch-when="prev" ng-click="params.page(page.number)" href="">&laquo; Previous</a>
-                        <a ng-switch-when="next" ng-click="params.page(page.number)" href="">Next &raquo;</a>
-                    </li>
-                    <li>
-                        <div class="btn-group">
-                            <button type="button" ng-class="{'active':params.count() == 10}" ng-click="params.count(10)"
-                                    class="btn btn-default">10
-                            </button>
-                            <button type="button" ng-class="{'active':params.count() == 25}" ng-click="params.count(25)"
-                                    class="btn btn-default">25
-                            </button>
-                            <button type="button" ng-class="{'active':params.count() == 50}" ng-click="params.count(50)"
-                                    class="btn btn-default">50
-                            </button>
-                            <button type="button" ng-class="{'active':params.count() == 100}"
-                                    ng-click="params.count(100)" class="btn btn-default">100
-                            </button>
-                        </div>
-                    </li>
-                </ul>
-            </script>
-
+        <div class="col-lg-3">
+            Adviser:
+            <select ng-model="key">
+                <option value=''>All</option>
+                <option value='AAA'>AAA</option>
+                <option value='BBB'>BBB</option>
+            </select>
         </div>
-
     </div>
 
+    <div class="orders" ng-controller="OrdersCtrl">
+        <div>
+            <div>
+                <div>
+                    <tabset>
+                        <tab heading="Orders" active="tab.active">
+                            <div>
+                                <span id="noOrders" ng-hide="noOrders">There are no orders which match your criteria. Please try again.</span>
+                                <span id="nrResults">{{data.length}} results match your search selection.</span>
+
+                                <div>
+                                    <table ng-table="tableParams" template-pagination="custom/pager" class="table">
+                                        <tr ng-repeat="account in $data | filter:accountName | filter:key"
+                                            class="orders tablerow">
+                                            <td data-title="'ID'" sortable="'account.accountId.key'">
+                                                {{account.account.accountId.key}}
+                                            </td>
+                                            <td data-title="'Account'" sortable="'account.accountName'">
+                                                {{account.account.accountName}}
+                                            </td>
+                                            <td data-title="'Adviser'" sortable="'account.adviser.key'">
+                                                {{account.account.adviser.key}}
+                                            </td>
+                                            <td data-title="'Product'" sortable="'account.productName'">
+                                                {{account.account.productName}}
+                                            </td>
+                                            <td data-title="'Status'" sortable="'minOpenOrderState'">
+                                                {{account.minOpenOrderState}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </tab>
+                    </tabset>
+                </div>
+
+                <script type="text/ng-template" id="custom/pager">
+
+                    <ul class="pager ng-cloak">
+                        <li ng-repeat="page in pages"
+                            ng-class="{'disabled': !page.active, 'previous': page.type == 'prev', 'next': page.type == 'next'}"
+                            ng-show="page.type == 'prev' || page.type == 'next'" ng-switch="page.type">
+                            <a ng-switch-when="prev" ng-click="params.page(page.number)" href="">&laquo; Previous</a>
+                            <a ng-switch-when="next" ng-click="params.page(page.number)" href="">Next &raquo;</a>
+                        </li>
+                        <li>
+                            <div class="btn-group">
+                                <button type="button" ng-class="{'active':params.count() == 10}"
+                                        ng-click="params.count(10)"
+                                        class="btn btn-default">10
+                                </button>
+                                <button type="button" ng-class="{'active':params.count() == 25}"
+                                        ng-click="params.count(25)"
+                                        class="btn btn-default">25
+                                </button>
+                                <button type="button" ng-class="{'active':params.count() == 50}"
+                                        ng-click="params.count(50)"
+                                        class="btn btn-default">50
+                                </button>
+                                <button type="button" ng-class="{'active':params.count() == 100}"
+                                        ng-click="params.count(100)" class="btn btn-default">100
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </script>
+
+            </div>
+        </div>
+    </div>
 </div>

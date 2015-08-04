@@ -2,6 +2,8 @@ app.controller('OrdersCtrl', function ($scope, ngTableParams, $filter,$location)
 
     console.log('ordersctrl time');
 
+    $scope.noOrders =true;
+
     $scope.tabs = [{
         slug: 'orders',
         title: "Orders",
@@ -42,7 +44,7 @@ app.controller('OrdersCtrl', function ($scope, ngTableParams, $filter,$location)
                 "accountName": "JEFFERY CHRISTOPHER R",
                 "productName": "Macquarie Super Manager",
                 "adviser": {
-                    "key": "AAA"
+                    "key": "BBB"
                 },
                 "accountServiceType": "SUPERANNUATION"
             },

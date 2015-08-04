@@ -1,0 +1,77 @@
+/*Main style*/
+body {
+    background:#000;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.main
+{
+    background:#ffffff;
+}
+
+.search
+{
+    background-color: #f6f6f6;
+    margin:20px 20px;
+    padding:20px;
+}
+
+
+.search input
+{
+    width:70%;
+}
+
+.search .icon {
+    background:url(images/magnify.gif) no-repeat;
+}
+
+.search input::-webkit-input-placeholder { font-style:italic; }
+
+.search select
+{
+    width:50%;
+}
+
+/*Orders style*/
+.orders table
+{
+    margin:5px 0 0 0;
+    font-size:12px;
+}
+
+.orders .table th{
+    background-color: #adadad;
+}
+
+/*.orders .table td th {*/
+    /*vertical-align:top;*/
+    /*padding:2px 3px 0 3px;*/
+    /*line-height:normal;*/
+    /*height:auto;*/
+    /*min-height:30px;*/
+    /*height:30px;*/
+/*}*/
+
+.orders .tablerow{
+    background-color: #adadad;
+    border-spacing:2px;
+}
+
+#nrResults
+{
+    padding:10px;
+    margin:10px;
+    font-size:10px;
+}
+
+.resetFilter
+{
+    float:right;
+    margin:10px;
+    padding:10px;
+}
+
+/*.row{*/
+    /*margin-top: 10px;*/
+/*}*/

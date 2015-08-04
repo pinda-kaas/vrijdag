@@ -5,7 +5,7 @@ app.config(function($stateProvider) {
     // Now set up the states
     $stateProvider
         .state('orders', {
-            templateUrl: '../modules/common/orders/partials/ordersNew.html',
+            templateUrl: '../app/modules/common/orders/partials/ordersNew.html',
             controller: 'OrdersCtrl'
         });
 

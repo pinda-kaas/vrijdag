@@ -2,9 +2,21 @@
   "name": "WIP",
   "version": "1.0.0",
   "devDependencies": {
-    "angular-ui-router": "^0.2.15"
+    "angular-ui-router": "^0.2.15",
+    "autoprefixer": "^5.2.0",
+    "connect-livereload": "^0.5.3",
+    "font-awesome": "^4.4.0",
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-concurrent": "^2.0.1",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^3.2.0",
+    "time-grunt": "^1.2.1",
+    "wiredep": "^3.0.0-beta"
   },
   "dependencies": {
+    "livereload-js": "^2.2.2",
     "ng-table": "^0.5.4"
   }
 }

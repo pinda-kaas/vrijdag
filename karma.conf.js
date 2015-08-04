@@ -24,7 +24,7 @@ module.exports = function(config) {
             'app/bower_components/angular-translate/angular-translate.js',
             'app/bower_components/angular-bootstrap/ui-bootstrap.js',
             'app/bower_components/angular-ui-router/release/angular-ui-router.js',
-            'app/modules/common/app.js',
+            'app/modules/app.js',
             'app/modules/**/*.js',
             'test/mock/**/*.js',
             'test/spec/modules/common/**/*.js',
