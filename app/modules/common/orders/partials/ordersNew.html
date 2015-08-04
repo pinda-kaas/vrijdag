@@ -40,12 +40,9 @@
                                     <table ng-table="tableParams" template-pagination="custom/pager" class="table">
                                         <!--ng-repeat="account in $data | filter:accountName | filter:key"-->
                                         <tr
-                                                ng-repeat="account in $filtered =($data | filter:accountName)"
+                                                ng-repeat="account in filtered =($data | filter:accountName)"
 
                                             class="orders tablerow">
-
-                                            <td>{{filtered.length}}</td>
-
 
                                             <td data-title="'ID'" sortable="'account.accountId.key'">
                                                 {{account.account.accountId.key}}
