@@ -7,17 +7,19 @@ describe('WIP e2e testing', function () {
             browser.get('http://localhost:63342/WIP/app/index.html');
         });
 
-        it('should filter by accountname', function () {
-            element(by.model('accountName')).sendKeys('john');
-            accountsList = element.all(by.repeater('account in $data'));
+        it('should filter by accountname nr results is 2', function () {
+            element(by.model('accountName')).sendKeys('ha');
+            accountsList = element.all(by.repeater('account in $parent.filtered'));
             expect(accountsList.count()).toEqual(2);
         });
 
-        it('should filter by adviser', function () {
-            element(by.model('key')).$('[value="BBB"]').click();
-            accountsList = element.all(by.repeater('account in $data'));
+        it('should filter by adviser nr results is 1', function () {
+            element(by.model('accountName')).sendKeys('bbb');
+            accountsList = element.all(by.repeater('account in $parent.filtered'));
             expect(accountsList.count()).toEqual(1);
         });
+
+
     });
 });
 

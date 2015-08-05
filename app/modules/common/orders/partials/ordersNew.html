@@ -64,6 +64,7 @@
                                             </td>
                                         </tr>
                                     </table>
+
                                 </div>
                             </div>
                         </tab>
@@ -77,7 +78,7 @@
                             ng-class="{'disabled': !page.active, 'previous': page.type == 'prev', 'next': page.type == 'next'}"
                             ng-show="page.type == 'prev' || page.type == 'next'" ng-switch="page.type">
                             <a ng-switch-when="prev" ng-click="params.page(page.number)" href="">&laquo; Previous</a>
-                            <a ng-switch-when="next" ng-click="params.page(page.number)" href="">Next &raquo;</a>
+                            <a ng-switch-wxhen="next" ng-click="params.page(page.number)" href="">Next &raquo;</a>
                         </li>
                         <li>
                             <div class="btn-group">
