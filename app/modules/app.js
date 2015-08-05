@@ -1,4 +1,4 @@
-var app =angular.module('WIP', ['ui.router','ngTable','ui.bootstrap']);
+var app =angular.module('WIP', ['ui.router','ngTable','ui.bootstrap','ngTableExport']);
 
 
 app.config(function($stateProvider) {

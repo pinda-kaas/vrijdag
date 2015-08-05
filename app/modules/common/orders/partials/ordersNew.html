@@ -21,8 +21,12 @@
 
     <div class="resetFilter">
         <a href="#" ng-click="key='';accountName='' ">Reset Filter</a>
-        &nbsp<a href="#">Refresh</a> <i class="fa fa-file-excel-o"></i> <a href="#">Export</a> <i
-            class="fa fa-print"></i> </i><a href="#">Print</a>
+        &nbsp<a href="#">Refresh</a> <i class="fa fa-file-excel-o"></i>
+
+        <!--<a class="btn btn-danger" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="data.csv">Export</a>-->
+        <a ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
+
+        <i class="fa fa-print"></i> </i><a href="#">Print</a>
     </div>
 
     <div class="orders" ng-controller="OrdersCtrl">
@@ -36,7 +40,7 @@
                                     <!--<span id="noOrders" ng-hide="noOrders">There are no orders which match your criteria. Please try again.</span>-->
                                     <span id="nrResults">{{filtered.length}} results match your search selection.</span>
 
-                                    <table ng-table="tableParams" template-pagination="custom/pager" class="table">
+                                    <table ng-table="tableParams" template-pagination="custom/pager" export-csv="$parent.csv" class="table">
                                         <tr
                                                 ng-repeat="account in $parent.filtered =($data | filter:accountName)"
                                                 class="orders tablerow">
