@@ -8,12 +8,12 @@
         </div>
 
         <!--<div class="col-lg-3">-->
-            <!--Adviser:-->
-            <!--<select ng-model="key">-->
-                <!--<option value=''>All</option>-->
-                <!--<option value='AAA'>AAA</option>-->
-                <!--<option value='BBB'>BBB</option>-->
-            <!--</select>-->
+        <!--Adviser:-->
+        <!--<select ng-model="key">-->
+        <!--<option value=''>All</option>-->
+        <!--<option value='AAA'>AAA</option>-->
+        <!--<option value='BBB'>BBB</option>-->
+        <!--</select>-->
         <!--</div>-->
 
     </div>
@@ -21,39 +21,38 @@
 
     <div class="resetFilter">
         <a href="#" ng-click="key='';accountName='' ">Reset Filter</a>
-        &nbsp<a href="#">Refresh</a> <i class="fa fa-file-excel-o"></i> <a href="#">Export</a> <i class="fa fa-print"></i> </i><a href="#">Print</a>
+        &nbsp<a href="#">Refresh</a> <i class="fa fa-file-excel-o"></i> <a href="#">Export</a> <i
+            class="fa fa-print"></i> </i><a href="#">Print</a>
     </div>
 
     <div class="orders" ng-controller="OrdersCtrl">
         <div>
             <div>
                 <div>
-                    <span id="noOrders" ng-hide="noOrders">There are no orders which match your criteria. Please try again.</span>
-                    <span id="nrResults">{{filtered.length}} results match your search selection.</span>
-                    
                     <tabset>
                         <tab heading="Orders" active="tab.active">
                             <div>
-
-
                                 <div class="mainTable">
-                                    <table ng-table="tableParams" template-pagination="custom/pager" class="table">
-                                        <!--ng-repeat="account in $data | filter:accountName | filter:key"-->
-                                        <tr
-                                                ng-repeat="account in filtered =($data | filter:accountName)"
+                                    <!--<span id="noOrders" ng-hide="noOrders">There are no orders which match your criteria. Please try again.</span>-->
+                                    <span id="nrResults">{{filtered.length}} results match your search selection.</span>
 
-                                            class="orders tablerow">
+                                    <table ng-table="tableParams" template-pagination="custom/pager" class="table">
+                                        <tr
+                                                ng-repeat="account in $parent.filtered =($data | filter:accountName)"
+                                                class="orders tablerow">
 
                                             <td data-title="'ID'" sortable="'account.accountId.key'">
                                                 {{account.account.accountId.key}}
                                             </td>
-                                            <td class="accountName" data-title="'Account'" sortable="'account.accountName'">
+                                            <td class="accountName" data-title="'Account'"
+                                                sortable="'account.accountName'">
                                                 {{account.account.accountName}}
                                             </td>
                                             <td data-title="'Adviser'" sortable="'account.adviser.key'">
                                                 {{account.account.adviser.key}}
                                             </td>
-                                            <td class="productName" data-title="'Product'" sortable="'account.productName'">
+                                            <td class="productName" data-title="'Product'"
+                                                sortable="'account.productName'">
                                                 {{account.account.productName}}
                                             </td>
                                             <td class="status" data-title="'Status'" sortable="'minOpenOrderState'">
