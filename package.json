@@ -12,6 +12,7 @@
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-contrib-watch": "^0.6.1",
     "load-grunt-tasks": "^3.2.0",
+    "requirejs": "^2.1.20",
     "time-grunt": "^1.2.1",
     "wiredep": "^3.0.0-beta"
   },

@@ -6,16 +6,6 @@
             <input type="text" ng-model="accountName" id="field4" placeholder="Search by account name or number"/>
             <i class="fa fa-search"></i>
         </div>
-
-        <!--<div class="col-lg-3">-->
-        <!--Adviser:-->
-        <!--<select ng-model="key">-->
-        <!--<option value=''>All</option>-->
-        <!--<option value='AAA'>AAA</option>-->
-        <!--<option value='BBB'>BBB</option>-->
-        <!--</select>-->
-        <!--</div>-->
-
     </div>
 
 
@@ -48,6 +38,8 @@
                                             <td data-title="'ID'" sortable="'account.accountId.key'">
                                                 {{account.account.accountId.key}}
                                             </td>
+
+
                                             <td class="accountName" data-title="'Account'"
                                                 sortable="'account.accountName'">
                                                 {{account.account.accountName}}
@@ -77,6 +69,7 @@
                         <li ng-repeat="page in pages"
                             ng-class="{'disabled': !page.active, 'previous': page.type == 'prev', 'next': page.type == 'next'}"
                             ng-show="page.type == 'prev' || page.type == 'next'" ng-switch="page.type">
+
                             <a ng-switch-when="prev" ng-click="params.page(page.number)" href="">&laquo; Previous</a>
                             <a ng-switch-wxhen="next" ng-click="params.page(page.number)" href="">Next &raquo;</a>
                         </li>

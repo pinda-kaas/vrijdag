@@ -2,10 +2,6 @@ app.controller('OrdersCtrl', function ($scope, ngTableParams, $filter, $location
 
     console.log('ordersctrl time');
 
-    $scope.filtered = {};
-
-   /// $scope.noOrders = true;
-
     $scope.tabs = [{
         slug: 'orders',
         title: "Orders",
@@ -393,6 +389,7 @@ app.controller('OrdersCtrl', function ($scope, ngTableParams, $filter, $location
         }
     ];
 
+
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
         count: 10,           // count per page
@@ -401,17 +398,15 @@ app.controller('OrdersCtrl', function ($scope, ngTableParams, $filter, $location
         }
     }, {
         total: $scope.data.length, // length of data
-
         getData: function ($defer, params) {
+            debugger;
             $scope.orderedData = params.sorting() ?
                 $filter('orderBy')($scope.data, params.orderBy()) :
                 $scope.data;
+            console.log($scope.orderedData.length);
+            var cnt = params.count();
             $defer.resolve($scope.orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
         }
-        //$scope.accounts = data;
-        ////$defer.resolve($scope.accounts);
-        //$defer.resolve($scope.accounts.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-
     })
 
 });

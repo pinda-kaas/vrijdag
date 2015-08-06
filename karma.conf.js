@@ -9,26 +9,19 @@ module.exports = function(config) {
         frameworks: ['jasmine'],
         // list of files / patterns to load in the browser
         files: [
-            'app/bower_components/jquery/jquery.js',
+
             'app/bower_components/angular/angular.js',
-            'app/bower_components/angular-cache/dist/angular-cache.js',
-            'app/bower_components/ng-server-validate.js',
-            'app/bower_components/angulartics/dist/angulartics.min.js',
-            'app/bower_components/angulartics/dist/angulartics-ga.min.js',
             'app/bower_components/angular-mocks/angular-mocks.js',
             'app/bower_components/angular-cookies/angular-cookies.js',
             'app/bower_components/angular-sanitize/angular-sanitize.js',
             'app/bower_components/angular-route/angular-route.js',
             'app/bower_components/angular-animate/angular-animate.js',
-            'app/bower_components/angular-messages/angular-messages.js',
-            'app/bower_components/angular-translate/angular-translate.js',
-            'app/bower_components/angular-bootstrap/ui-bootstrap.js',
-            'app/bower_components/angular-ui-router/release/angular-ui-router.js',
+            'app/modules/common/orders/services/orderService.js',
             'app/modules/app.js',
             'app/modules/**/*.js',
-            'test/mock/**/*.js',
-            'test/spec/modules/common/**/*.js',
-            'test/spec/**/*.js'
+            'test/spec/modules/**/*.spec.js',
+            'test/spec/test.js',
+            'test/spec/**/*.spec.js'
         ],
         preprocessors: {
             '**/app/modules/noncommon/**/*.js': ['coverage']
